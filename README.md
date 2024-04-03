@@ -1,39 +1,183 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Milestone Project 4: Speedy Eats Food Ordering Website
 
-Welcome,
+Website shown on various devices
 
-This is the Code Institute student template for Codeanywhere. If you are using Gitpod then you need [this template](https://github.com/Code-Institute-Org/gitpod-full-template) instead.  We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+## Live Project
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **August 30th, 2023**
+View the live project
 
-## Codeanywhere Reminders
+## Table of Contents
+1. [Project Goals](#project-goals)
+- Business Goals
+- User Goals
+- Administrator Goals
+2. [User Experience](#user-experience)
+- User Stories
+- Design and Structure
+- Wireframes
+3. [Features](#features)
+- Must Have (current features)
+- Could Have
+- Won't Have (for now)
+4. [Technologies Used](#technologies-used)
+5. [Database Structure](#database-structure)
+6. [Testing](#testing)
+- User stories tests
+- Functionality
+- HTML Validation
+- CSS Validation
+- JS Validation
+- Python Validation
+- Accessibility and Performance
+- Browser Compatibility
+- Device Compatibility
+7. [Bugs](#bugs)
+8. [Deployment](#deployment)
+9. [Credits](#credits)
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+## Project Goals
 
-`python3 -m http.server`
+### Business Goals
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+As a business, I would like the website to:
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
 
-`http_server`
+### User Goals
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+As a user, I would like the website to
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+### Administrator Goals
 
-To log into the Heroku toolbelt CLI:
+As a website administrator I would like the website to:
 
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+## User Experience
 
----
+### User Stories
 
-Happy coding!
+First time visitor goals:
+
+
+Returning visitor goals
+
+
+Frequent visitor goals:
+
+
+### Design and Structure
+
+The website consists of a number of pages which have a consistent structure and design.
+
+#### Colour Palette
+
+#### Typography
+
+I chose the following typography:
+
+
+### Wireframes
+
+Wireframes of the initial design can be found in the following wireframes:
+
+- Mobile wireframes
+- Desktop wireframes
+
+## Features
+
+### Must Have (current features)
+
+These are the features that have already been implemented on the website.
+
+#### Navigation
+
+#### Home page
+
+### Could Have
+
+### Won't Have (for now)
+
+## Technologies Used
+
+## Database Structure
+
+## Testing
+
+### User stories tests
+
+The user stories have been tested and the results are:
+
+### Functionality
+
+The functionality for various aspects of the site was tested and the results are:
+
+### HTML Validation
+
+### CSS Validation
+
+## JS Validation
+
+## Python Validation
+
+### Accessibility and Performance
+
+### Browser Compatibility
+
+The website has been tested on the following browsers:
+
+### Device Compatibility
+
+### Check links work
+
+## Bugs
+
+Bugs fixed:
+
+## Deployment
+
+### How the site was deployed
+
+The site was deployed using GitHub and is hosted on Heroku and was deployed as follows:
+
+### How to clone this repository
+
+- Go to the repository at https://github.com/cshimvin/speedy-eats-ms4.git on GitHub
+- Click on the Code button and copy the https URL under Clone
+- Open a terminal on GitBash
+- Navigate to the folder you want to store the cloned repository
+- In the terminal type git clone and paste the URL of the cloned repository after it then press Enter
+- The site will then be cloned to that directory
+
+### Set up the Database
+
+### Deploying locally
+
+If you are going to deploy the application locally, you will need to create an `env.py` file. An example can be found in the [sample_env.py](/sample_env.py) file attached.
+
+**DO NOT commit your `env.py` file to GitHub as it contains unique credentials to your database.** Make sure you add `env.py` to your .gitignore file.
+
+### Deploying to Heroku
+
+Ensure you have signed up to [Heroku](https://www.heroku.com/) then carry out the following:
+
+- Select "New" > "Create New App"
+- Create a unique app name and select the server region closest to you.
+- Select "Create App"
+- In the new app, select "Settings"
+- Select "Review Config Vars"
+- Complete your environment variables:
+- Create the Procfile in the terminal: `echo web: python app.py > Procfile`
+- Create the requirements.txt file in the terminal: `pip3 install -r requirements.txt`
+
+To connect the GitHub repository to the Heroku App:
+
+- Go to the app in Heroku
+- Go to the "Deploy" tab
+- Under "Connect to GitHub" search for your repository and click "Connect"
+- To update the app every time you commit to GitHub, select "Automatic Deployment"
+
+## Credits
+
+Any images not referenced are owned by the developer. 
+
+Attribution for code is included as comments and docstrings in the code itself.
