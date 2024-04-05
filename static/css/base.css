@@ -89,6 +89,11 @@ body {
     color: #fff;
   }
 
-  .opaque-overlay-text {
+.opaque-overlay-text {
     background-color: rgba(0, 0, 0, 0.5);
+}
+
+.brand-color {
+    background-color: brown;
+    color: #fff;
 }
