@@ -1,3 +1,7 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
 /* Navbar CSS taken from Bootstrap documentation - https://getbootstrap.com/docs/4.4/components/navbar/ */ 
 
 .bd-placeholder-img {
@@ -78,3 +82,13 @@
 }
 
 /* End navbar CSS */
+
+.jumbotron {
+    background-image: url("/media/homepage-header-image.jpg");
+    background-size: cover;
+    color: #fff;
+  }
+
+  .opaque-overlay-text {
+    background-color: rgba(0, 0, 0, 0.5);
+}
