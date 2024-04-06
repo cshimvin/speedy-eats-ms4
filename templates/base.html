@@ -52,7 +52,7 @@
             </ul>
               <ul class="navbar-nav ml-auto">    
               <li class="nav-item">
-              <a class="nav-link" href="#">Home</a>
+              <a class="nav-link" href="{% url 'home' %}">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Link</a>
@@ -62,7 +62,7 @@
                 Food Menu
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">All Menu Items</a>
+                <a class="dropdown-item" href="{% url 'products' %}">All Menu Items</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#">Starters</a>
                 <a class="dropdown-item" href="#">Mains</a>
