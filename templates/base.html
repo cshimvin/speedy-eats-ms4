@@ -44,8 +44,8 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto ml-auto">
             <li class="nav-item">
-                <form class="form-inline">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <form class="form-inline" action="{% url 'products' %}">
+                <input class="form-control mr-sm-2" name="query" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-dark my-2 my-sm-0" type="submit">Search</button>
               </form>
             </li>
@@ -64,11 +64,11 @@
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="{% url 'products' %}">All Menu Items</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Starters</a>
-                <a class="dropdown-item" href="#">Mains</a>
-                <a class="dropdown-item" href="#">Sides</a>
-                <a class="dropdown-item" href="#">Desserts</a>
-                <a class="dropdown-item" href="#">Drinks</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=starter">Starters</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=main">Mains</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=side">Sides</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=dessert">Desserts</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=drink">Drinks</a>
               </div>
             </li>
             <li class="nav-item">
