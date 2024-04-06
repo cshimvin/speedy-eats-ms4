@@ -12,9 +12,16 @@
 {% block content %}
     <div class="container">
         <div class="row">
+            {% for product in products %}
             <div class="col">
-                {{ products }}
+                    {{ product.name }}
+                    {{ product.product_code }}
+                    {{ product.description }}
+                    {{ product.category }}
+                    {{ product.price }}
+                    <img src="/media/{{ product.image }}">
             </div>
+            {% endfor %}
         </div>
     </div>
 {% endblock %}
