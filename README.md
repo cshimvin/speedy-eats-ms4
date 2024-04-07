@@ -111,6 +111,8 @@ The user stories have been tested and the results are:
 
 The functionality for various aspects of the site was tested and the results are:
 
+- each app tested after creation by creating a basic view showing the text "It works"
+
 ### HTML Validation
 
 ### CSS Validation
