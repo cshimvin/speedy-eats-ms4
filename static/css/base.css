@@ -104,6 +104,20 @@ body {
     color: brown;
 }
 
+/* Back to top link styling taken from Code Institute Boutique Ado Walkthrough */
+
+.btt-button {
+    height: 42px;
+    width: 42px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+.btt-link {
+    cursor: pointer;
+}
+
 /* Footer */
 
 footer {

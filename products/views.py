@@ -10,6 +10,7 @@ def all_products(request):
     products = Product.objects.all()
     query = None
     categories = None
+    friendly_name_plural = None
 
     if request.GET:
         # Get category if category selected

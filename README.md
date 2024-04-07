@@ -132,6 +132,8 @@ The website has been tested on the following browsers:
 ## Bugs
 
 Bugs fixed:
+- Plural of Cateogry in admin was Categorys - added a Meta class to the Category model: verbose_name_plural = "Categories"
+- Plural of Category names in page headers incorrect in some cases (e.g. Side Dishes was Side Dishs) - added a field to the Category model of category_name_plural
 
 ## Deployment
 
