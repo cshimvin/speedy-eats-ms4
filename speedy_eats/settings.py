@@ -74,6 +74,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # ensures bag contents are available across the whole site
+                'bag.contexts.bag_contents',
             ],
         },
     },
@@ -163,3 +165,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Standard devliery cost
+STANDARD_DELIVERY = 2.95
+
+# Minimum amount the order can be for checkout
+MINIMUM_ORDER_VALUE = 10
