@@ -5,5 +5,14 @@
 {% endblock %}
 
 {% block content %}
-<h1>Bag view works!</h1>
+
+<div class="container">
+<h2 class="logo-font">Shopping Bag</h2>
+{% if bag_items %}
+    <p>You have items in your bag</p>
+{% else %}
+    <p>Your bag is empty</p>
+{% endif %}
+<p><a href="{% url 'products' %}" class="btn btn-outline"><i class="fa fa-arrow-left"></i> Keep Shopping</a></p>
+</div>
 {% endblock %}

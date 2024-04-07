@@ -129,6 +129,9 @@ body {
 
 footer {
     min-height: 50px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 .social-links {
     padding-bottom: 15px;
