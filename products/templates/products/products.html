@@ -5,10 +5,11 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
-            <div class="col text-center mt-3">
+            <div class="col mt-3 offset-1">
                 <h2 class="logo-font">Our Menu</h2>
+                <hr>
                 {% if current_categories %}
                     <h3>{{ friendly_name_plural }}</h3>
                 {{ current_categories.name }}
