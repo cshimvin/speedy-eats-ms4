@@ -21,9 +21,9 @@ def add_to_bag(request, item_id):
         # Increase item by quantity if already in bag
         bag[item_id] += qty
     else:
-        # Add item quantity if not in bag 
+        # Add item quantity if not in bag
         bag[item_id] = qty
-    
+
     request.session['bag'] = bag
     print(request.session['bag'])
     return redirect(redirect_url)
