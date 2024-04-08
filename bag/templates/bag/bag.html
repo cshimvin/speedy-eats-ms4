@@ -18,8 +18,8 @@
         </div>
         <div class="row">
             <div class="col">
-                {% if bag_items %}
-                    <p>You have items in your bag</p>
+                {% if bag %}
+                    <p>{{ bag_items }}</p>
                 {% else %}
                     <p>Your bag is empty</p>
                 {% endif %}

@@ -1,5 +1,6 @@
 from django.conf import settings
 
+
 def bag_contents(request):
 
     bag_items = []
@@ -8,8 +9,10 @@ def bag_contents(request):
     minimum_order_delta = settings.MINIMUM_ORDER_VALUE - total
     delivery = settings.STANDARD_DELIVERY
     grand_total = total + delivery
+    bag = request.session.get('bag', {})
 
     context = {
+        'bag': 'bag',
         'bag_items': bag_items,
         'product_count': product_count,
         'total': total,
