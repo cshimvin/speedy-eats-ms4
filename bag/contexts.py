@@ -9,9 +9,8 @@ def bag_contents(request):
     bag_items = []
     product_count = 0
     total = 0
-    minimum_order_delta = settings.MINIMUM_ORDER_VALUE - total
-    delivery = settings.STANDARD_DELIVERY
-    grand_total = total + delivery
+    delivery = Decimal(settings.STANDARD_DELIVERY)
+    grand_total = 0
     bag = request.session.get('bag', {})
 
     for item_id, quantity in bag.items():
@@ -24,8 +23,16 @@ def bag_contents(request):
             'product': product,
         })
 
+    if total < settings.MINIMUM_ORDER_VALUE:
+        minimum_value_met = False
+    else:
+        minimum_value_met = True
+
+    minimum_order_delta = settings.MINIMUM_ORDER_VALUE - total
+    grand_total = total + delivery
+
     context = {
-        'bag': 'bag',
+        'minimum_value_met': minimum_value_met,
         'bag_items': bag_items,
         'product_count': product_count,
         'total': total,

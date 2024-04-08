@@ -11,15 +11,39 @@
             <h2 class="logo-font">Shopping Bag</h2>
             </div>
         </div>
-        <div class="row">
-            <div class="col">
-                <p>The minimum order value is £{{ minimum_order_value }}</p>
+        {% if not minimum_value_met and bag_items %}
+            <div class="row">
+                <div class="col">
+                    <p class="text-danger">The minimum order value is £{{ minimum_order_value }}. You need to spend <strong>£{{ minimum_order_delta|floatformat:2 }} more</strong> excluding delivery in order to check out.</p>
+                </div>
             </div>
-        </div>
+        {% endif %}
         <div class="row">
             <div class="col">
                 {% if bag_items %}
-                    <p>{{ bag_items }}</p>
+                    <table class="table table-striped">
+                        <thead>
+                            <th>Item</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                        </thead>
+                    {% for item in bag_items %}
+                        <tr>
+                            <td><strong>{{ item.product.name }}</strong></td>
+                            <td>£{{ item.product.price }}</td>
+                            <td>{{ item.quantity }}</td>
+                            <td>£{{ item.product.price }}</td>
+                        </tr>
+                    {% endfor %}
+                        <tr>
+                            <td colspan="4" class="pt-5 text-right">
+                                <h6><strong>Items Total: £{{ total|floatformat:2 }}</strong></h6>
+                                <h6>Delivery: £{{ delivery|floatformat:2 }}</h6>
+                                <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
+                            </td>
+                        </tr>
+                    </table>
                 {% else %}
                     <p>Your bag is empty</p>
                 {% endif %}
