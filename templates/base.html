@@ -120,9 +120,6 @@
   {% block content %}
   {% endblock %}
 
-  {% block postloadjs %}
-  {% endblock %}
-
   <!-- Footer code taken from Bootstrap documentation - https://getbootstrap.com/docs/4.4/examples/sticky-footer/ -->
   <footer class="footer mt-auto pt-4 brand-color">
     <div class="container">
@@ -164,6 +161,14 @@
       </div>
     </div>
   </footer>
+
+  {% block postloadjs %}
+  <script type="text/javascript">
+    $('.toast').toast('show');
+  </script>
+  {% endblock %}
+  
 </body>
 
 </html>
+

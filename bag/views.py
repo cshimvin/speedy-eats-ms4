@@ -56,10 +56,12 @@ def alter_bag(request, item_id):
 def remove_from_bag(request, item_id):
     """ Remove an item from the bag """
     # Try to remove item from the bag
+    product = Product.objects.get(pk=item_id)
     try:
         bag = request.session.get('bag', {})
         bag.pop(item_id)
         request.session['bag'] = bag
+        messages.success(request, f'Removed {product.name} from your bag')
         return HttpResponse(status=200)
     # If remove failed, throw an error
     except Exception as e:
