@@ -37,7 +37,7 @@ def add_to_bag(request, item_id):
 def alter_bag(request, item_id):
     """ Change the contents of the bag """
     # Get values from add to bag form
-    print(request.POST.get('qty'))
+    product = Product.objects.get(pk=item_id)
     qty = int(request.POST.get('qty'))
 
     # Get session information from bag key
@@ -46,8 +46,10 @@ def alter_bag(request, item_id):
     # Check if item is in the bag dictionary
     if qty > 0:
         bag[item_id] = qty
+        messages.success(request, f'Updated {product.name} quantity to {bag[item_id]}')
     else:
         bag.pop(item_id)
+        messages.success(request, f'Removed {product.name} from your bag')
 
     request.session['bag'] = bag
     return redirect(reverse('view_bag'))
