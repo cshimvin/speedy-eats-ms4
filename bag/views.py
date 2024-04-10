@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 
 
 def view_bag(request):
@@ -27,3 +27,22 @@ def add_to_bag(request, item_id):
     request.session['bag'] = bag
     print(request.session['bag'])
     return redirect(redirect_url)
+
+
+def alter_bag(request, item_id):
+    """ Change the contents of the bag """
+    # Get values from add to bag form
+    print(request.POST.get('qty'))
+    qty = int(request.POST.get('qty'))
+
+    # Get session information from bag key
+    bag = request.session.get('bag', {})
+
+    # Check if item is in the bag dictionary
+    if qty > 0:
+        bag[item_id] = qty
+    else:
+        bag.pop(item_id)
+
+    request.session['bag'] = bag
+    return redirect(reverse('view_bag'))
