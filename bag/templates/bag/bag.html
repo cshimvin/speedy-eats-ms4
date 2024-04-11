@@ -66,9 +66,9 @@
         <div class="row">
             <div class="col">
                 {% if not minimum_value_met or not bag_items %}
-                    <a href="#" class="btn btn-dark btn-lg disabled">Check out securely <i class="fa fa-lock"></i></a>
+                    <a href="{% url 'view_checkout' %}" class="btn btn-dark btn-lg disabled">Check out securely <i class="fa fa-lock"></i></a>
                 {% else %}
-                    <a href="#" class="btn btn-dark btn-lg">Check out securely <i class="fa fa-lock"></i></a>
+                    <a href="{% url 'view_checkout' %}" class="btn btn-dark btn-lg">Check out securely <i class="fa fa-lock"></i></a>
                 {% endif %}
             </div>
         </div>
