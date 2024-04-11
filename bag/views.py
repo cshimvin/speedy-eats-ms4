@@ -46,7 +46,8 @@ def alter_bag(request, item_id):
     # Check if item is in the bag dictionary
     if qty > 0:
         bag[item_id] = qty
-        messages.success(request, f'Updated {product.name} quantity to {bag[item_id]}')
+        messages.success(request,
+                         f'Updated {product.name} quantity to {bag[item_id]}')
     else:
         bag.pop(item_id)
         messages.success(request, f'Removed {product.name} from your bag')
