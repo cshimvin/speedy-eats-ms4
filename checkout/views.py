@@ -39,6 +39,6 @@ def view_checkout(request):
     context = {
         'order_form': order_form,
         'stripe_public_key': settings.STRIPE_PUBLIC_KEY,
-        'client_secret': settings.STRIPE_SECRET_KEY,
+        'client_secret': intent.client_secret,
     }
     return render(request, template, context)
