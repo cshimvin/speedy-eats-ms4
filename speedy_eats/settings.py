@@ -182,8 +182,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Standard devliery cost
-STANDARD_DELIVERY = 2.95
-
-# Minimum amount the order can be for checkout
+# Stripe
 MINIMUM_ORDER_VALUE = 10
+STANDARD_DELIVERY = 2.95
+STRIPE_CURRENCY = 'gbp'
+STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY', '')
+STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY', '')
+
