@@ -1,15 +1,14 @@
 from django import forms
-from .models import Order
+from .models import UserProfile
 
 
-# Class taken from Code Institute Course Boutique Ado walkthrough
-class OrderForm(forms.ModelForm):
-    """ Order form model """
+class UserProfileForm(forms.ModelForm):
+    """ Profile form model """
     class Meta:
-        model = Order
-        fields = ('full_name', 'email', 'phone_number',
-                  'street_address1', 'street_address2', 'town_or_city',
-                  'county', 'postcode',)
+        model = UserProfile
+
+        # Exclude user field to prevent it being amended
+        exclude = ('user',)
 
     def __init__(self, *args, **kwargs):
         """
@@ -20,18 +19,16 @@ class OrderForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         # Create dictionary of placeholders
         placeholders = {
-            'full_name': 'Full Name',
-            'email': 'Email Address',
-            'phone_number': 'Phone Number',
-            'postcode': 'Postal Code',
-            'town_or_city': 'Town or City',
-            'street_address1': 'Street Address 1',
-            'street_address2': 'Street Address 2',
-            'county': 'County',
+            'default_phone_number': 'Phone Number',
+            'default_street_address1': 'Street Address 1',
+            'default_street_address2': 'Street Address 2',
+            'default_town_or_city': 'Town or City',
+            'default_county': 'County',
+            'default_postcode': 'Postal Code',
         }
 
         # Set autofocus to Full Name field
-        self.fields['full_name'].widget.attrs['autofocus'] = True
+        self.fields['default_phone_number'].widget.attrs['autofocus'] = True
 
         # Add placeholders with set above together with an asterisk
         # if a required field
@@ -42,6 +39,6 @@ class OrderForm(forms.ModelForm):
                 placeholder = placeholders[field]
             self.fields[field].widget.attrs['placeholder'] = placeholder
             # Style form
-            self.fields[field].widget.attrs['class'] = 'stripe-style-input'
+            self.fields[field].widget.attrs['class'] = 'profile-form-input'
             # Remove form labels
             self.fields[field].label = False
