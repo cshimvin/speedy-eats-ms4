@@ -14,11 +14,13 @@ class OrderAdmin(admin.ModelAdmin):
     inlines = (OrderAdminLineItemInline,)
     # Set admin fields to read only
     readonly_fields = ('order_number', 'date',
-                       'delivery_cost', 'order_total', 'grand_total',)
+                       'delivery_cost', 'order_total', 'grand_total',
+                       'original_bag', 'stripe_pid')
     # display fields in the correct order in admin
     fields = ('order_number', 'date', 'full_name', 'email', 'phone_number',
               'street_address1', 'street_address2', 'town_or_city', 'county',
-              'postcode', 'delivery_cost', 'order_total', 'grand_total',)
+              'postcode', 'delivery_cost', 'order_total', 'grand_total',
+              'original_bag', 'stripe_pid')
     # Restrict fields to show in list display
     list_display = ('order_number', 'date', 'full_name',
                     'order_total', 'delivery_cost', 'grand_total',)

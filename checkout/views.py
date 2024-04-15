@@ -6,6 +6,7 @@ from .models import Order, OrderLineItem
 from products.models import Product
 from bag.contexts import bag_contents
 import stripe
+import json
 
 
 def view_checkout(request):
@@ -30,7 +31,11 @@ def view_checkout(request):
 
         # Check form data is valid
         if order_form.is_valid():
-            order = order_form.save()
+            order = order_form.save(commit=False)
+            pid = request.POST.get('client_secret').split('_secret')[0]
+            order.stripe_pid = pid
+            order.original_bag = json.dumps(bag)
+            order.save()
             for item_id, item_data in bag.items():
                 try:
                     if isinstance(item_data, int):
@@ -95,13 +100,13 @@ def checkout_success(request, order_number):
     Handle successful checkouts
     """
     order = get_object_or_404(Order, order_number=order_number)
-    
+
     template = 'checkout/checkout_success.html'
 
-    # delete bag contents once order processed 
+    # delete bag contents once order processed
     if 'bag' in request.session:
         del request.session['bag']
-    
+
     # if user wants their information saved, save information
     save_info = request.session.get('save_info')
     context = {
