@@ -95,7 +95,13 @@ These are the features that have already been implemented on the website.
 
 ### Could Have
 
+- User friendly order numbers
+- Check postcode to ensure the customer is in the delivery area
+
 ### Won't Have (for now)
+
+- Dynamic order tracking
+- Autocomplete address from postcode
 
 ## Technologies Used
 

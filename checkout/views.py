@@ -95,12 +95,18 @@ def checkout_success(request, order_number):
     Handle successful checkouts
     """
     order = get_object_or_404(Order, order_number=order_number)
-    messages.success(request, f'Order number {order_number} complete. \
-        Your food will be delivered in 30 minutes')
-
+    
     template = 'checkout/checkout_success.html'
+
+    # delete bag contents once order processed 
+    if 'bag' in request.session:
+        del request.session['bag']
+    
+    # if user wants their information saved, save information
+    save_info = request.session.get('save_info')
     context = {
         'order': order,
+        'delivery_time': settings.DELIVERY_TIME,
     }
 
     return render(request, template, context)

@@ -188,3 +188,6 @@ STANDARD_DELIVERY = 3
 STRIPE_CURRENCY = 'gbp'
 STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY', '')
+
+# Order delivery timescale in minutes
+DELIVERY_TIME = 30
