@@ -64,8 +64,15 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'home' %}">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              My Account
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{% url 'account_signup' %}">Register</a>
+              <a class="dropdown-item" href="{% url 'account_login' %}">Login</a>
+            </div>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -123,7 +130,7 @@
   {% endblock %}
 
   <!-- Footer code taken from Bootstrap documentation - https://getbootstrap.com/docs/4.4/examples/sticky-footer/ -->
-  <footer class="footer mt-auto pt-4 brand-color">
+  <footer class="footer mt-3 pt-4 brand-color">
     <div class="container">
       <div class="row">
         <div class="col-sm-4">

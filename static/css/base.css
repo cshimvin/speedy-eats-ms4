@@ -90,6 +90,19 @@ body {
 
 /* End navbar CSS */
 
+/* Allauth template CSS amendments */
+
+.allauth-form-inner-content input {
+    border-color: #000;
+    border-radius: 0;
+}
+
+.allauth-form-inner-content label:not([for='id_remember']) {
+    display: none;
+}
+
+/* End Allauth amendments */
+
 .jumbotron {
     background-image: url("/media/homepage-header-image.jpg");
     background-size: cover;
@@ -102,7 +115,8 @@ body {
 
 /* Brand colours */
 
-.brand-color {
+.brand-color,
+.allauth-form-inner-content button {
     background-color: brown;
     color: #fff;
 }
