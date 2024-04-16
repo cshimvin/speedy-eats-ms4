@@ -122,10 +122,8 @@ def view_checkout(request):
             except UserProfile.DoesNotExist:
                 order_form = OrderForm()
         else:
+             # Create an instance of the order form
             order_form = OrderForm()
-
-        # Create an instance of the order form
-        order_form = OrderForm()
 
         # Check Stripe Public Key is present
         if not stripe_public_key:
