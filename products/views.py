@@ -62,10 +62,11 @@ def add_product(request):
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            messages.success(request, f'Product added successfully')
+            messages.success(request, 'Product added successfully')
             return redirect(reverse('add_product'))
         else:
-            messages.error(request, 'Product not added. Check your form input and try again')
+            messages.error(request, 'Product not added. \
+                Check your form input and try again')
     else:
         form = ProductForm()
 

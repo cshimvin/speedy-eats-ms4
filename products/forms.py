@@ -15,4 +15,3 @@ class ProductForm(forms.ModelForm):
         # From Code Institute course Boutique Ado walkthrough
         friendly_names = [(c.id, c.get_friendly_name()) for c in categories]
         self.fields['category'].choices = friendly_names
-
