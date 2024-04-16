@@ -122,7 +122,7 @@ def view_checkout(request):
             except UserProfile.DoesNotExist:
                 order_form = OrderForm()
         else:
-             # Create an instance of the order form
+            # Create an instance of the order form
             order_form = OrderForm()
 
         # Check Stripe Public Key is present
@@ -165,9 +165,9 @@ def checkout_success(request, order_number):
             'default_postcode': order.postcode,
         }
 
-    profile_form = UserProfileForm(profile_data, instance=profile)
-    if profile_form.is_valid():
-        profile_form.save()
+        profile_form = UserProfileForm(profile_data, instance=profile)
+        if profile_form.is_valid():
+            profile_form.save()
 
     template = 'checkout/checkout_success.html'
 
@@ -181,6 +181,7 @@ def checkout_success(request, order_number):
     context = {
         'order': order,
         'delivery_time': settings.DELIVERY_TIME,
+        'no_bag': True,
     }
 
     return render(request, template, context)

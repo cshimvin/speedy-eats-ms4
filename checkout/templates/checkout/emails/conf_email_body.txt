@@ -1,0 +1,26 @@
+Dear {{ order.full_name }}
+
+Your Speedy Eats order has been confirmed. The order details are as follows:
+
+Order Number: {{ order.order_number }}
+Order Date: {{ order.date }}
+
+Order Total: £{{ order.order_total }}
+Delivery: £{{ order.delivery_cost }}
+Grand Total: £{{ order.grand_total }}
+
+Your food will be delivered to:
+{{ order.street_address1 }}
+{{ order.street_address2 }}
+{{ order.town_or_city }}
+{{ order.county }}
+{{ order.postcode }}
+
+If we have any queries, we have your phone number as {{ order.phone_number }}.
+
+If you have any questions, feel free to contact us at {{ phone_number }}.
+
+Thank you for your custom.
+
+
+Speedy Eats
