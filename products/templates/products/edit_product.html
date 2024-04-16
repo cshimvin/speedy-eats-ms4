@@ -20,6 +20,7 @@
                 {{ form | crispy }}
                 <div class="text-right">
                     <a class="btn brand-color" href="{% url 'products' %}"><i class="fa-solid fa-angles-left"></i>&nbsp;&nbsp;Cancel</a>
+                    <a class="btn btn-danger" href="{% url 'delete_product' product.id %}">Delete Product&nbsp;&nbsp;<i class="fa-regular fa-trash-can"></i></a>
                     <button class="btn brand-color" type="submit">Update Product&nbsp;&nbsp;<i class="fa-regular fa-pen-to-square"></i></button>
                 </div>
             </form>
