@@ -2,11 +2,13 @@ from django.shortcuts import render, reverse, redirect, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
 from .models import Product, Category
+from .forms import ProductForm
 
 
 def all_products(request):
-    """ A view to show all food items, including sorting and search queries """
-
+    """
+    A view to show all food items, including sorting and search queries
+    """
     products = Product.objects.all()
     query = None
     categories = None
@@ -41,12 +43,25 @@ def all_products(request):
 
 
 def product_detail(request, product_id):
-    """ A view to show details of a specific food item """
-
+    """
+    A view to show details of a specific food item
+    """
     product = get_object_or_404(Product, pk=product_id)
-
     context = {
         'product': product,
     }
 
     return render(request, 'products/product_detail.html', context)
+
+
+def add_product(request):
+    """
+    A view to add a product to the store
+    """
+    form = ProductForm()
+    template = 'products/add_product.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
