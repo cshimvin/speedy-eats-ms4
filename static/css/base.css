@@ -103,6 +103,19 @@ body {
 
 /* End Allauth amendments */
 
+
+/* Customer details forms styling */
+
+#profile-update-form input::placeholder {
+    color: #aab7c4;
+}
+
+.stripe-style-input::placeholder {
+    color: #aab7c4;
+}
+
+/* End profile update form styling */
+
 .jumbotron {
     background-image: url("/media/homepage-header-image.jpg");
     background-size: cover;

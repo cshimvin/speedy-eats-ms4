@@ -29,7 +29,7 @@ class UserProfile(models.Model):
 
 
 @receiver(post_save, sender=User)
-def create_update_user_profile(sender, instance, created, **kwargs):
+def create_or_update_user_profile(sender, instance, created, **kwargs):
     """
     Create user profile or update it if it exists
     """
