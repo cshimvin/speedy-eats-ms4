@@ -3,9 +3,13 @@ from django.contrib import messages
 from django.db.models import Q
 from .models import Product, Category
 from .forms import ProductForm
+from .forms import ProductForm
 
 
 def all_products(request):
+    """
+    A view to show all food items, including sorting and search queries
+    """
     """
     A view to show all food items, including sorting and search queries
     """
@@ -43,6 +47,9 @@ def all_products(request):
 
 
 def product_detail(request, product_id):
+    """
+    A view to show details of a specific food item
+    """
     """
     A view to show details of a specific food item
     """
