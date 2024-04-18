@@ -4,7 +4,7 @@ Website shown on various devices
 
 ## Live Project
 
-View the live project
+[View the live project](https://cshimvin-speedy-eats-9486f6bced13.herokuapp.com/)
 
 ## Table of Contents
 1. [Project Goals](#project-goals)
@@ -121,11 +121,32 @@ The functionality for various aspects of the site was tested and the results are
 
 ### HTML Validation
 
+All pages were tested using the [W3C HTML validator](https://validator.w3.org/nu/) and no errors were found. The results are in the [attached PDF document](/documentation/pdf/HTML-Validation.pdf).
+
 ### CSS Validation
+
+The CSS stylesheet `base.css` was checked using the [W3C CSS validator](https://jigsaw.w3.org/css-validator/validator) and no errors were found:
+
+![W3C CSS Validation results](/documentation/images/css-validation.jpg)
 
 ## JS Validation
 
+There were only a few lines of in page javascript and a js file for Stripe. All javascript worked as expected and no console errors were displayed.
+
 ## Python Validation
+
+The code was validated using Pyhton's own Flake8 utility using the command `python3 -m flake8`
+
+The results were:
+
+![Flake8 results](/documentation/images/flake8-errors.png)
+
+I generally resolved formatting errors as I went along using Gitpod's own Problems tab. The remaining errors are:
+- A majority of the errors above are from automatically produced files (migrations. build-assets) so I left these alone.
+- In `settings.py` I could not get the lines any shorter as they contained API keys which could not be broken up.
+- In `checkout/webhooks.py` local variable 'e' is used for error handling so cannot be removed.
+- `env.py` is not part of the deployed project since these variables are in the Heroku itself. This also impacts 'env' imported but unused error in `settings.py`
+ - In `checkout/apps.py` checkout.signals is used for Stripe.
 
 ### Accessibility and Performance
 

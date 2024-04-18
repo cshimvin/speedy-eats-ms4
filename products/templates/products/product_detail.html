@@ -64,8 +64,7 @@
                             </a>
                             <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
                             {% if request.user.is_superuser %}
-                            <p class="mt-3 ml-2"><small><a href="{% url 'edit_product' product.id %}">Edit</a> | <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a></p>
-                            </small>
+                            <p class="mt-3 ml-2"><small><a href="{% url 'edit_product' product.id %}">Edit</a> | <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a></small></p>
                             {% endif %}
                         </div>
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
@@ -80,7 +79,7 @@
 {% block postloadjs %}
 {{ block.super }}
     <!-- Code taken from Code Institute Course Boutique Ado walkthrough -->
-    <script type="text/javascript">
+    <script>
 
         // Disable +/- buttons outside 1-50 range
         function handleEnableDisable(itemId) {
