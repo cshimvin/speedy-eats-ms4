@@ -225,13 +225,17 @@ This allows a logged in user to amend their personal details to ensure future pu
 
 ### Could Have
 
-- User friendly order numbers
-- Check postcode to ensure the customer is in the delivery area
+If there was more time available in this phase, the following features could be implemented:
+
+- __More user friendly order numbers:__ At present the order numbers are quite complex. Displaying a more user firneldy number means if a customer has to contact the retailer by phone, it is easier to give them the order number.
+- A postcode check to ensure the customer is in the delivery area.
+- Customised 404 and 500 error pages to keep the website on brand.
+- A contact page for users to contact the retailer in case of any issues.
 
 ### Won't Have (for now)
 
-- Dynamic order tracking
-- Autocomplete address from postcode
+- __Dynamic order tracking and delivery time estimate:__ Real time tracking of a users food order so they know how long it is going to be.
+- __Autocomplete address from postcode:__ Allow users to have their address autocompleted from their postcode.
 
 ## Technologies Used
 
@@ -250,8 +254,13 @@ This allows a logged in user to amend their personal details to ensure future pu
 - [Amazon AWS](https://aws.amazon.com/) was used for storing static and media files.
 - [Heroku](https://www.heroku.com/) was used for hosting the deployed back-end site.
 - [Balsamiq](https://balsamiq.com/) was used to create the project wireframes.
+- [DBDiagram](https://dbdiagram.io/) was used to create the database schema diagram
 
 ## Database Structure
+
+I used a relational database for this project as there were relationships between the Django models. I used SQLite during development and ElephantSQL when it went into production.
+
+![Databse schema](/documentation/images/db-schema.png)
 
 ## Testing
 
@@ -296,13 +305,29 @@ I generally resolved formatting errors as I went along using Gitpod's own Proble
 
 ### Accessibility and Performance
 
+Accessibility was checked to ensure that Aria labels and image alt text was added to all images and visual elements on the site.
+
+Lighthouse reports were also created which passed accessibility. There were also a few performance suggestions which could be implemented in future iterations.
+
 ### Browser Compatibility
 
 The website has been tested on the following browsers:
 
+- Google Chrome Version 121.0.6167.185 (Official Build) (64-bit)
+- Microsoft Edge Version 123.0.2420.81 (Official build) (64-bit)
+- Mozilla Firefox 122.0 (64-bit)
+
+The layout, functionality and website works on all the above browsers.
+
 ### Device Compatibility
 
+The responsiveness and layout of the site has been tested on a number of devices including tablets, desktops and mobile phones from iPhone 5 to 5K screens and the website displays correctly.
+
+Chrome developer tools were used at various points during the development including when changes were made to the layout.
+
 ### Check links work
+
+All links were tested manually and by using the [Broken Link Checker](https://chrome.google.com/webstore/detail/broken-link-checker/nibppfobembgfmejpjaaeocbogeonhch?utm_source=ext_sidebar&hl=en-US) extension on Google Chrome.
 
 ## Bugs
 
