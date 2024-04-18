@@ -1,6 +1,6 @@
 # Milestone Project 4: Speedy Eats Food Ordering Website
 
-Website shown on various devices
+![Website shown on various devices](/documentation/images/speedy-eats-layouts.png)
 
 ## Live Project
 
@@ -71,10 +71,14 @@ The website consists of a number of pages which have a consistent structure and 
 
 #### Colour Palette
 
+I used brown for the main brand colour as this conveys earthiness which relates a lot to Indian food.
+
 #### Typography
 
 I chose the following typography:
 
+- Roboto for the amin body text font
+- Reddit Mono for the page titles font
 
 ### Wireframes
 
@@ -91,7 +95,35 @@ These are the features that have already been implemented on the website.
 
 #### Navigation
 
+This is the main navigation on the site. It changes depending on whether a user is logged in or if the user is a superuser so that users only see the options they are authorised to see.
+
+
 #### Home page
+
+#### Registration page
+
+This allows a user to register an account which checks if the username doesn't already exist and then the data gets written to the database. It also validates the username and password to ensure it meets the requirements and returns a message if it doesn't. The password is saved as a hash to the database. It also logs the user in and adds a user session cookie.
+
+#### Log in page
+
+his allows a user to log in so that they can see their past orders or carry out administration tasks if they are marked as a superuser in their user account on the database. It checks the username and password is valid when compared to the database entry then sets a "user" cookie to ensure the user stays logged in.
+
+### Product details page
+
+This shows the details of the food item including it's price and the option to add a quantity of the item to their bag. If the user is logged in as a superuser then buttons are displayed to allow the food item listing to be edited or deleted.
+
+#### Add a product page
+
+This is available to logged in superusers only. It allows a product to be added to the database with details including the name, description, price, image and type of dish.
+
+#### Shopping bag page
+
+#### Checkout page
+
+#### Order confirmation page
+
+#### Profile page
+
 
 ### Could Have
 
@@ -104,6 +136,22 @@ These are the features that have already been implemented on the website.
 - Autocomplete address from postcode
 
 ## Technologies Used
+
+- [HTML5](https://en.wikipedia.org/wiki/HTML5) to create the website.
+- [CSS3](https://en.wikipedia.org/wiki/CSS3) to style the website.
+- [Bootstrap 4](https://getbootstrap.com/docs/4.1/getting-started/introduction/) was used for the layout of the site.
+- [FontAwesome](https://fontawesome.com/) was used to create some of the icons on the site.
+- [Google Fonts](https://fonts.google.com/) was used to display the typography of the site.
+- [Git](https://git-scm.com/) was used for version control of the code.
+- [GitHub](https://github.com/) was used as a repository for the code.
+- [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) and [JQuery 3.3.1](https://jquery.com/) to create the functionality of the site
+- [Python](https://www.python.org/) was used as the back-end programming language.
+- [Gitpod](https://gitpod.io/) and [CodeAnywhere](https://codeanywhere.com/) were used as a cloud-based IDEs for development.
+- [Django](https://www.djangoproject.com/) was used as the Python framework for the site together with the Jinja template.
+- [ElephantSQL](https://elephantsql.com/) was used as the non-relational database management with Django.
+- [Amazon AWS](https://aws.amazon.com/) was used for storing static and media files.
+- [Heroku](https://www.heroku.com/) was used for hosting the deployed back-end site.
+- [Balsamiq](https://balsamiq.com/) was used to create the project wireframes.
 
 ## Database Structure
 
