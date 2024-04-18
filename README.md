@@ -41,16 +41,30 @@
 
 As a business, I would like the website to:
 
+- showcase the food and service we offer
+- offer delivery of food to customers
+- allow customers to buy food for delivery
+- accept card payments online
 
 ### User Goals
 
 As a user, I would like the website to
 
+- offer a wide range of food online
+- be easy to navigate and find the food I want
+- offer payment online
+- offer delivery of food to my home
+- provide decent descriptions of food items so I know what I'm ordering
 
 ### Administrator Goals
 
 As a website administrator I would like the website to:
 
+- be easy to understand and navigate
+- let me administer food items on the site
+- let me check customer's orders
+- create superusers in order for them to add and update food items
+- view and update the minimum order value and current delivery time
 
 ## User Experience
 
@@ -58,16 +72,38 @@ As a website administrator I would like the website to:
 
 First time visitor goals:
 
+- As a first time visitor, I would like to easily find out about what food is on offer.
+- As a first time visitor, I would like to easily order food online for delivery to my home.
+- As a first time visitor, I would like to be able to pay for my order online.
+- As a first time visitor, I would like to search for food to order.
+- As a first time visitor, I would like to browse what food as available in each category.
+- As a first time visitor, I would like to see how much I have spent so far and if I have met the miniumum order requirements.
+- As a first time visitor, I would like a smooth ordering and checkout process.
+- As a first time visitor, I would like to receive confirmation of my order to ensure it has been processed correctly.
 
 Returning visitor goals
 
+- As a returning visitor, I would like to navigate the site and find other food to order.
+- As a returning visitor, I would like to check on my previous orders.
+- As a returning visitor, I would like to be able to save my details for further orders so I don't have to complete it every time.
+- As a returning visitor, I would like a smooth ordering and checkout process.
+- As a returning visitor, I would like to receive confirmation of my order to ensure it has been processed correctly.
 
 Frequent visitor goals:
 
+- As a frequent visitor, I would like to keep up to date with any new food items or special offers.
+- As a frequent visitor, I would like to create a profile so I can save my delivery information for the future and to see all my previous orders.
+- As a frequent visitor, I would like a consistent a familiar view of the site so I know what I need to do to order items.
 
 ### Design and Structure
 
-The website consists of a number of pages which have a consistent structure and design.
+The website consists of a number of pages which have a consistent structure and design. The background image was designed to convey the fact it is a food ordering site.
+
+The main goal of the site is to allow users to browse, order and pay for food for delivery. They can also see how long the order is going to take to be delivered.
+
+The website allows users to search for food items without logging in which should encourage users to register an account. This is why the log in and register links are consistently shown on the top navigation bar.
+
+Once logged in, users can see their previous orders if they have any and save their information to their profile to save time and effort on future orders.
 
 #### Colour Palette
 
@@ -95,35 +131,97 @@ These are the features that have already been implemented on the website.
 
 #### Navigation
 
-This is the main navigation on the site. It changes depending on whether a user is logged in or if the user is a superuser so that users only see the options they are authorised to see.
+This is the main navigation on the site and is displayed on all site pages. It changes depending on whether a user is logged in or if the user is a superuser so that users only see the options they are authorised to see. It changes in appearance on smaller screens to prevent clutter.
 
+On larger screens:
+
+![Main navigation on larger screens](/documentation/images/main-nav-large.png)
+
+On smaller screens:
+
+![Main navigation on smaller screens](/documentation/images/main-nav-small.png)
+
+My account menus:
+
+![My account menu on navigation bar](/documentation/images/account-menus.png)
+
+#### Footer
+
+This is displayed on every page and contains links to the social media networks and details of the site itself.
+
+![Footer](/documentation/images/footer.png)
 
 #### Home page
+
+This is the shop front which showcases which has 4 main features:
+
+The header of the page to show what the website is about
+
+![Header of the page](/documentation/images/header.png)
+
+A link to the food menu
+
+![Food menu link](/documentation/images/food-link.png)
+
+The opening hours
+
+![Opening hours](/documentation/images/opening-hours.png)
+
+Any special offers
+
+![Special offers](/documentation/images/special-offers.png)
 
 #### Registration page
 
 This allows a user to register an account which checks if the username doesn't already exist and then the data gets written to the database. It also validates the username and password to ensure it meets the requirements and returns a message if it doesn't. The password is saved as a hash to the database. It also logs the user in and adds a user session cookie.
 
+![Registration form](/documentation/images/registration.png)
+
 #### Log in page
 
 his allows a user to log in so that they can see their past orders or carry out administration tasks if they are marked as a superuser in their user account on the database. It checks the username and password is valid when compared to the database entry then sets a "user" cookie to ensure the user stays logged in.
+
+![Log in page](/documentation/images/log-in.png)
 
 ### Product details page
 
 This shows the details of the food item including it's price and the option to add a quantity of the item to their bag. If the user is logged in as a superuser then buttons are displayed to allow the food item listing to be edited or deleted.
 
+![Product details](/documentation/images/product-detail.png)
+
 #### Add a product page
 
 This is available to logged in superusers only. It allows a product to be added to the database with details including the name, description, price, image and type of dish.
 
+![Add product form](/documentation/images/add-product.png)
+
 #### Shopping bag page
+
+Once a user adds products to the shopping bag they can see what they have ordered so far and if there order has met the miniumum order value.
+
+![Shopping bag](/documentation/images/shopping-bag.png)
 
 #### Checkout page
 
+This shows the order summary and a form to input delivery details. The payment is handled by [Stripe](https://www.stripe.com) and by use of webhooks.
+
+If delivery details previously saved by a registered user, the form will be pre-populated with these details.This is also an option to save delivery details for future purchases.
+
+![Checkout page](/documentation/images/checkout.png)
+
 #### Order confirmation page
+
+This confirms that the order was processed successfully and that payment has been successfully handled. It shows a summary of the order number, contact information and delivery information. It also shows details of the order itself.
+
+On checkout the user is sent a confirmation email with details about their order.
+
+![Checkout success page](/documentation/images/checkout-success.png)
 
 #### Profile page
 
+This allows a logged in user to amend their personal details to ensure future purchases are made for quickly and efficiently by having details on orders made completed automatically. It also shows a user's previous orders which can be clicked on for further details.
+
+![Profile page](/documentation/images/profile.png)
 
 ### Could Have
 
