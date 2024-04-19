@@ -364,14 +364,17 @@ If you are going to deploy the application locally, you will need to create an `
 
 Ensure you have signed up to [Heroku](https://www.heroku.com/) then carry out the following:
 
-- Select "New" > "Create New App"
-- Create a unique app name and select the server region closest to you.
-- Select "Create App"
-- In the new app, select "Settings"
-- Select "Review Config Vars"
-- Complete your environment variables:
-- Create the Procfile in the terminal: `echo web: python app.py > Procfile`
-- Create the requirements.txt file in the terminal: `pip3 install -r requirements.txt`
+1. Select "New" > "Create New App"
+2. Create a unique app name and select the server region closest to you.
+3. Select "Create App"
+4. In the new app, select "Settings"
+5. Select "Reveal Config Vars"
+6. Complete your environment variables:
+
+![Heroku Config Vars](/documentation/images/heroku-config-vars.png)
+
+7. Create the Procfile in the terminal: `echo web: python app.py > Procfile`
+8. Create the requirements.txt file in the terminal: `pip3 install -r requirements.txt`
 
 To connect the GitHub repository to the Heroku App:
 
@@ -379,6 +382,18 @@ To connect the GitHub repository to the Heroku App:
 - Go to the "Deploy" tab
 - Under "Connect to GitHub" search for your repository and click "Connect"
 - To update the app every time you commit to GitHub, select "Automatic Deployment"
+
+### Set up AWS for static files and images
+
+Instructions courtesy of Code Institute Course Boutique Ado Walkthrough.
+
+1. Create an [Amazon AWS](https://aws.amazon.com) account
+
+2. Search for S3 on the interface and create a new bucket with the same name as your Heroku app.
+
+3. Follow the instructions in the [attached PDF](/documentation/pdf/aws-setup.pdf) to create the bucket.
+
+4. 
 
 ## Credits
 
