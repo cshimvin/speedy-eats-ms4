@@ -352,8 +352,6 @@ The site was deployed using GitHub and is hosted on Heroku and was deployed as f
 - In the terminal type git clone and paste the URL of the cloned repository after it then press Enter
 - The site will then be cloned to that directory
 
-### Set up the Database
-
 ### Deploying locally
 
 If you are going to deploy the application locally, you will need to create an `env.py` file. An example can be found in the [sample_env.py](/sample_env.py) file attached.
@@ -500,6 +498,49 @@ pip freeze > requirements.txt
 4. Go to the bucket in AWS and create a `media` folder under Objects:
 ![Media folder](/documentation/images/bucket-media-folder.png)
 </details>
+
+### Set up the Database
+
+1. Sign up for [ElephantSQL](https://customer.elephantsql.com/) and create a new instance.
+2. Give the database a meaningful name (e.g. speedy-eats).
+3. Use the Tiny Turtle plan.
+4. Select your nearest region and click Review.
+5. Select Create Instance.
+6. Go into your databse instance, copy the URL of the database and add it to the DATABASE_URL Config variable in Heroku.
+7. In your terminal, enter the following to install apps to connect to your database:
+```
+ pip3 install dj_database_url==0.5.0 psycopg2
+ pip freeze > requirements.txt
+```
+8. In the `settings.py` file, add the following:
+```
+ import os
+ import dj_database_url
+```
+9. __Temporarily__ add the following to `settings.py` with your DATABASE URL copied above:
+```
+DATABASES = {
+     'default': dj_database_url.parse('your-database-url-here')
+ }
+ ```
+10. In the terminal enter the following:
+```
+python3 manage.py showmigrations
+python3 manage.py migrate
+python3 manage.py loaddata categories
+python3 manage.py loaddata products
+```
+11. Create a superuser in the terminal by adding a username and password after entering `python3 manage.py createsuperuser`
+12. Replace the code entered in step 9 above to:
+```
+DATABASES = {
+     'default': {
+         'ENGINE': 'django.db.backends.sqlite3',
+         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+     }
+ }
+ ```
+ __You must ensure you do this before committing any changes otherwise you'll expose your DATABASE URL__
 
 ## Credits
 
