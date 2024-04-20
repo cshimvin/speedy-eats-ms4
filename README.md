@@ -129,8 +129,8 @@ I chose the following typography:
 
 Wireframes of the initial design can be found in the following wireframes:
 
-- Mobile wireframes
-- Desktop wireframes
+- [Mobile wireframes](/documentation/pdf/speedy-eats-wireframes-mobile.pdf)
+- [Desktop wireframes](/documentation/pdf/speedy-eats-wireframes-desktop.pdf)
 
 ## Features
 
