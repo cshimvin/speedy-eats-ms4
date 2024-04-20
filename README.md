@@ -601,6 +601,6 @@ DATABASES = {
 
 ## Credits
 
-Any images not referenced are owned by the developer. 
+Images for the site have been taken from [Pexels.com](https://www.pexels.com) and are royalty free.
 
 Attribution for code is included as comments and docstrings in the code itself.
