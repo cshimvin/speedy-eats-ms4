@@ -364,7 +364,7 @@ I generally resolved formatting errors as I went along using Gitpod's own Proble
 
 Accessibility was checked to ensure that Aria labels and image alt text was added to all images and visual elements on the site.
 
-Lighthouse reports were also created which passed accessibility. There were also a few performance suggestions which could be implemented in future iterations.
+A [Lighthouse report](/documentation/pdf/lighthouse-report.pdf) was also created which passed accessibility. There were also a few performance suggestions which could be implemented in future iterations.
 
 ### Browser Compatibility
 
