@@ -260,7 +260,7 @@ If there was more time available in this phase, the following features could be 
 
 I used a relational database for this project as there were relationships between the Django models. I used SQLite during development and ElephantSQL when it went into production.
 
-![Databse schema](/documentation/images/db-schema.png)
+![Database schema](/documentation/images/db-schema.png)
 
 ## Testing
 
@@ -385,15 +385,121 @@ To connect the GitHub repository to the Heroku App:
 
 ### Set up AWS for static files and images
 
-Instructions courtesy of Code Institute Course Boutique Ado Walkthrough.
+<details>
+
+<summary>Create the Bucket</summary>
 
 1. Create an [Amazon AWS](https://aws.amazon.com) account
+2. Search for S3 on the interface and create a new general purpose bucket with the same name as your Heroku app, select the region nearest to you and untick the block all public access box.
+3. Tick the acknowledgement and select create bucket.
+4. Go back into your bucket.
+5. Under the Properties tab, enable static web hosting. Use `index.html` for the Index document and `error.html` for the Error document and select save changes.
+6. Under the permissions tab, edit the CORS box with the following:
+```
+[
+    {
+        "AllowedHeaders": [
+            "Authorization"
+        ],
+        "AllowedMethods": [
+            "GET"
+        ],
+        "AllowedOrigins": [
+            "*"
+        ],
+        "ExposeHeaders": []
+    }
+]
+```
+7. Edit the Bucket policy and click on Policy generator.
+8. Select S3 bucket policy and enter `*` in the Principal box and `GetObject` in the actions box.
+9. Copy the ARN name from the Properties tab into the ARN box and click Add Statement.
+10. Click Generate Policy.
+11. Copy the box from the box and paste it into the Policy section of the Bucket Policy.
+12. Add `/*` to the end of the ARN under the Resource field and click Save.
+13. Edit the Access Control List under the Permissions tab and tick "List" under the "Everyone" group.
+</details>
+<details>
+<summary>Create the Identity and Access Management for the bucket</summary>
 
-2. Search for S3 on the interface and create a new bucket with the same name as your Heroku app.
+1. Search for IAM on the interface bar.
+2. Click on User Groups under Access Management.
+3. Click on Create group.
+4. Give the group a meaningful name.
+5. Click on Create Group
+6. Click on Policies under Access Management
+7. Click Create Policy
+8. Select JSON then Actions > Import Policy
+9. Search for AmazonS3FullAccess and select it.
+10. Click Import.
+11. Get the ARN from the bucket created earlier.
+12. Paste the ARN in the `Resource` field instead of `*` so it looks like the following:
+```
+"Resource": [
+    "pasted-arn-name",
+    "pasted-arn-name/*"
+]
+```
+13. Give the policy a meaningful name and click on Create Policy.
+14. Attach the policy to a Group by going to Access Management > User Groups.
+15. Click on the group name created above.
+16. Under the Permissions tab click on Add Permissions > Attach Policy
+17. Search for the policy created above, select the policy and click Attach Policies.
+18. Select Access Management > Users.
+19. Click Create user.
+20. Enter a meaningful name - e.g. `speedy-eats-staticfiles-user`
+21. Click Next.
+22. Select the group you created above and click Next.
+23. Click Create User.
+</details>
+<details>
+<summary>Retrieve the access keys</summary>
 
-3. Follow the instructions in the [attached PDF](/documentation/pdf/aws-setup.pdf) to create the bucket.
+1. Go to IAM and select 'Users'
+2. Select the user to create the CSV file.
+3. Select the 'Security Credentials' tab
+4. Go to 'Access Keys' and click 'Create access key'
+5. Select 'Application running outside AWS' and click Next
+6. Click 'Create Access Key'
+7. Click the 'Download .csv file' button
+You can then use this to complete the access keys in the Config Vars created above.
+</details>
 
-4. 
+<details>
+
+<summary>Connect Django to S3</summary>
+
+1. Install boto3 and django-storages
+```
+pipenv install boto3
+pipenv install django-storages
+pip freeze > requirements.txt
+```
+2. In settings.py:
+    1. Add `storages` to `INSTALLED_APPS`
+    2. Set the AWS bucket config:
+    ```
+    if "USE_AWS" in os.environ:
+    # Bucket Config
+    AWS_STORAGE_BUCKET_NAME = "speedy-eats"
+    AWS_S3_REGION_NAME = "eu-west-1"
+    AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
+    AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+    AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
+    ```
+    3. Set the static and media files storage and location and override static and media URLs:
+    ```
+    STATICFILES_STORAGE = "custom_storages.StaticStorage"
+    STATICFILES_LOCATION = "static"
+    DEFAULT_FILE_STORAGE = "custom_storages.MediaStorage"
+    MEDIAFILES_LOCATION = "media"
+    STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/"
+    MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/"
+    ```
+3. Delete `DISABLE_COLLECTSTATIC` variable from the Heroku Config Vars and deploy the app.
+4. Go to the bucket in AWS and create a `media` folder under Objects:
+![Media folder](/documentation/images/bucket-media-folder.png)
+</details>
 
 ## Credits
 
