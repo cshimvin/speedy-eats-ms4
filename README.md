@@ -77,7 +77,7 @@ First time visitor goals:
 - As a first time visitor, I would like to be able to pay for my order online.
 - As a first time visitor, I would like to search for food to order.
 - As a first time visitor, I would like to browse what food as available in each category.
-- As a first time visitor, I would like to see how much I have spent so far and if I have met the miniumum order requirements.
+- As a first time visitor, I would like to see how much I have spent so far and if I have met the minimum order requirements.
 - As a first time visitor, I would like a smooth ordering and checkout process.
 - As a first time visitor, I would like to receive confirmation of my order to ensure it has been processed correctly.
 
@@ -206,7 +206,7 @@ This is available to logged in superusers only. It allows a product to be added 
 
 #### Shopping bag page
 
-Once a user adds products to the shopping bag they can see what they have ordered so far and if there order has met the miniumum order value.
+Once a user adds products to the shopping bag they can see what they have ordered so far and if there order has met the minimum order value.
 
 ![Shopping bag](/documentation/images/shopping-bag.png)
 
@@ -214,7 +214,7 @@ Once a user adds products to the shopping bag they can see what they have ordere
 
 This shows the order summary and a form to input delivery details. The payment is handled by [Stripe](https://www.stripe.com) and by use of webhooks.
 
-If delivery details previously saved by a registered user, the form will be pre-populated with these details.This is also an option to save delivery details for future purchases.
+If delivery details previously saved by a registered user, the form will be pre-populated with these details. This is also an option to save delivery details for future purchases.
 
 ![Checkout page](/documentation/images/checkout.png)
 
@@ -280,12 +280,12 @@ The user stories have been tested and the results are:
 
 |As a…                     |I want to…                                                                                                              |Result|
 |--------------------------|------------------------------------------------------------------------------------------------------------------------|------|
-|New customer              |Know what the purpost of the site is                                                                                    |PASS  |
+|New customer              |Know what the purpose of the site is                                                                                    |PASS  |
 |                          |I would like to easily order food online for delivery to my home                                                        |PASS  |
 |                          |I would like to be able to pay for my order online.                                                                     |PASS  |
 |                          |I would like to search for food to order.                                                                               |PASS  |
 |                          |I would like to browse what food as available in each category.                                                         |PASS  |
-|                          |I would like to see how much I have spent so far and if I have met the miniumum order requirements.                     |PASS  |
+|                          |I would like to see how much I have spent so far and if I have met the minimum order requirements.                     |PASS  |
 |                          |I would like a smooth ordering and checkout process.                                                                    |PASS  |
 |                          |I would like to receive confirmation of my order to ensure it has been processed correctly.                             |PASS  |
 |Returning customer        |I would like to navigate the site and find other food to order.                                                         |PASS  |
@@ -320,7 +320,7 @@ The functionality for various aspects of the site was tested and the results are
 |Edit a product          |The existing product details are displayed in the relevant form fields and when an administrator edits and submits the form, the details are updated in the database and a success message is displayed.                                                                       |Edited the product details on the form and submitted the form. I received a success message and I checked the database and the details had been updated.                                                                                                                                                                                                                         |PASS  |
 |Delete a product        |When an administrator clicks on the delete link on a product in the product details page, the product is deleted.                                                                                                                                                              |Clicked on a delete link on a product page. I received a success message and I checked the database and the details had been updated.                                                                                                                                                                                                                                            |PASS  |
 |Page not found          |When the incorrect web page address is entered, is produces a 404 page.                                                                                                                                                                                                        |Visited a page that doesn't exist in the site.                                                                                                                                                                                                                                                                                                                                   |PASS  |
-|Shopping bag            |When a user goes to the shopping bag, the list of contents are displayed with a check out link. If the minimum order value hasn't been sent, a message is displayed and the checkout button is unavailable.                                                                    |Add products to the bag and visited the bag. The Contents were displayed currectly. With orders above the minimum value it let me click the checkout button but below the below this was disabled and a message displayed.                                                                                                                                                       |PASS  |
+|Shopping bag            |When a user goes to the shopping bag, the list of contents are displayed with a check out link. If the minimum order value hasn't been sent, a message is displayed and the checkout button is unavailable.                                                                    |Add products to the bag and visited the bag. The Contents were displayed correctly. With orders above the minimum value it let me click the checkout button but below the below this was disabled and a message displayed.                                                                                                                                                       |PASS  |
 |Checkout                |When a user goes to the checkout they can complete their delivery and card details and pay for their order.                                                                                                                                                                    |Went to the checkout page and completed the delivery and payment details.                                                                                                                                                                                                                                                                                                        |PASS  |
 |Checkout                |When a registered user goes to the checkout they can tick the box to save their delivery details.                                                                                                                                                                              |Went to the checkout page as a registered user and completed the delivery details and ticked the save details box. Went back into the bag and the details were saved.                                                                                                                                                                                                            |PASS  |
 |Checkout success        |When a user submits their order at the checkout they received a success page with the order details.                                                                                                                                                                           |Submitted my order and a success page was displayed with order details.                                                                                                                                                                                                                                                                                                          |PASS  |
@@ -347,7 +347,7 @@ There were only a few lines of in page javascript and a js file for Stripe. All 
 
 ## Python Validation
 
-The code was validated using Pyhton's own Flake8 utility using the command `python3 -m flake8`
+The code was validated using Python's own Flake8 utility using the command `python3 -m flake8`
 
 The results were:
 
@@ -389,7 +389,7 @@ All links were tested manually and by using the [Broken Link Checker](https://ch
 ## Bugs
 
 Bugs fixed:
-- Plural of Cateogry in admin was Categorys - added a Meta class to the Category model: verbose_name_plural = "Categories"
+- Plural of Category in admin was Categorys - added a Meta class to the Category model: verbose_name_plural = "Categories"
 - Plural of Category names in page headers incorrect in some cases (e.g. Side Dishes was Side Dishs) - added a field to the Category model of category_name_plural
 - JQuery did not work correctly to update and remove items from the bag. Found out I was using the slim version of JavaScript. Changed base template to load the main version of JavaScript
 - Update link wasn't working in the bag as it was in the incorrect place on the page. Moved it outside the form and it worked.
@@ -563,7 +563,7 @@ pip freeze > requirements.txt
 3. Use the Tiny Turtle plan.
 4. Select your nearest region and click Review.
 5. Select Create Instance.
-6. Go into your databse instance, copy the URL of the database and add it to the DATABASE_URL Config variable in Heroku.
+6. Go into your database instance, copy the URL of the database and add it to the DATABASE_URL Config variable in Heroku.
 7. In your terminal, enter the following to install apps to connect to your database:
 ```
  pip3 install dj_database_url==0.5.0 psycopg2
