@@ -7,8 +7,18 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        <h1>Reviews</h1>
-        <p>Page is rendering</p>
+        <div class="col">
+            <h1>Reviews</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {% for review in reviews %}
+            {{ review.review_title }}
+            {% endfor %}
+        </div>
+    </div>
+        <p>{{ reviews }}</p>
     </div>
 </div>
 {% endblock %}

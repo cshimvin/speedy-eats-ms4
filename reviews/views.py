@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .forms import ReviewForm
+from .forms import ReviewForm, Review
 
 
 @login_required
@@ -31,4 +31,9 @@ def add_review(request):
 
 def reviews(request):
     """ Display the Reviews """
-    return render(request, 'reviews/reviews.html')
+    reviews = Review.objects.all()
+    context = {
+        'reviews': reviews,
+    }
+
+    return render(request, 'reviews/reviews.html', context)
