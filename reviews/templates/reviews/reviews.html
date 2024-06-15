@@ -11,14 +11,15 @@
             <h1>Reviews</h1>
         </div>
     </div>
-    <div class="row">
-        <div class="col">
-            {% for review in reviews %}
-            {{ review.review_title }}
-            {% endfor %}
+    {% for review in reviews %}
+        <div class="row">
+            <div class="col">
+                <h2>{{ review.review_title }}</h2>
+                <p>{{ review.review_body }}</p>
+                <p>Reviewed on {{ review.review_date }} by {{ review.reviewer_name }}</p>
+            </div>
         </div>
-    </div>
-        <p>{{ reviews }}</p>
-    </div>
+        <hr />
+        {% endfor %}
 </div>
 {% endblock %}

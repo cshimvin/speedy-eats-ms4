@@ -10,4 +10,4 @@ class Review(models.Model):
     reviewer_name = models.CharField(max_length=254, null=False, blank=False)
 
     def __str__(self):
-        return self.name
+        return self.review_title
