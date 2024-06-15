@@ -7,8 +7,25 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        <h1>Add Review</h1>
-        <p>Page is rendering</p>
+        <div class="col">
+            <h1>Add Review</h1>
+        </div>
+    </div>
+        <div class="row">
+            <div class="col">
+                <form class="mt-3" action="{% url 'add_review' %}" method="POST" id="review-form">
+                    {% csrf_token %}
+                    {{ form.review_title | as_crispy_field }}
+                    {{ form.review_body | as_crispy_field }}
+                    {{ form.reviewer_name | as_crispy_field }}
+                    <p>Your rating: (0-Terrible to 5-Great)</p>
+                        <input name="rating" id="rating" type="range" min="0" max="5" value="5" oninput="rangeValue.innerText = this.value">
+                        &nbsp;<span id="rangeValue">5</span>
+                    </p>
+                    <button class="btn brand-color">Submit Review <i class="fa-regular fa-pen-to-square"></i></button>
+                </form>
+            </div>
+        </div>    
     </div>
 </div>
 {% endblock %}
