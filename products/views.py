@@ -47,9 +47,6 @@ def product_detail(request, product_id):
     """
     A view to show details of a specific food item
     """
-    """
-    A view to show details of a specific food item
-    """
     product = get_object_or_404(Product, pk=product_id)
     context = {
         'product': product,

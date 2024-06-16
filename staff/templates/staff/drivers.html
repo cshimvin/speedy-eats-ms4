@@ -8,7 +8,8 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h1>Delivery Drivers</h1>
+            <h1 class="logo-font">Delivery Drivers</h1>
+            <hr>
         </div>
     </div>
     <div class="row mt-3">
@@ -22,12 +23,12 @@
                         <th></th>
                     </tr>
                 </thead>
-                {% for driver in drivers %}
+                {% for member in staff %}
                     <tr>
-                        <td>{{ staff.staff_number }}</td>
-                        <td>{{ staff.first_name }}</td>
-                        <td>{{ staff.last_name }}</td>
-                        <td>Edit driver</td>
+                        <td>{{ member.staff_number }}</td>
+                        <td>{{ member.first_name }}</td>
+                        <td>{{ member.last_name }}</td>
+                        <td><a href="{% url 'edit_driver' member.id %}">Edit</a> | Delete</td>
                     </tr>
                 {% endfor %}
             </table>

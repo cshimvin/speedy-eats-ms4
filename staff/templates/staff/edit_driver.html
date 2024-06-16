@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row mb-2">
+        <div class="col-12 col-md-6">
+            <h2 class="logo-font">Edit driver</h2>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <form method="POST" action="{% url 'edit_driver' driver.id %}" class="form mb-2"
+                enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.staff_number | as_crispy_field }}
+                {{ form.first_name | as_crispy_field }}
+                {{ form.last_name | as_crispy_field }}
+                {{ form.vehicle_reg_number | as_crispy_field }}
+                <div class="mb-3">
+                    <label for="vehicle_type">Vehicle type:</label>
+                    <select class="form-select form-select-lg" name="vehicle_type" id="vehicle_type" aria-label="Vehicle type">
+                        <option value="Car" {% if driver.vehicle_type == 'Car' %}selected{% endif %}>Car</option>
+                        <option value="Van" {% if driver.vehicle_type == 'Van' %}selected{% endif %}>Van</option>
+                        <option value="Motorbike" {% if driver.vehicle_type == 'Motorbike' %}selected{% endif %}>Motorbike</option>
+                        <option value="Bicycle" {% if driver.vehicle_type == 'Bicycle' %}selected{% endif %}>Bicycle</option>
+                    </select>
+                </div>
+                <div class="text-right">
+                    <a class="btn brand-color" href="{% url 'all_drivers' %}"><i
+                            class="fa-solid fa-angles-left"></i>&nbsp;&nbsp;Cancel</a>
+                    <a class="btn btn-danger" href="">Delete Driver&nbsp;&nbsp;<i
+                            class="fa-regular fa-trash-can"></i></a>
+                    <button class="btn brand-color" type="submit">Update Driver&nbsp;&nbsp;<i
+                            class="fa-regular fa-pen-to-square"></i></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
