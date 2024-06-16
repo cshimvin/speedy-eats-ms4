@@ -11,5 +11,27 @@
             <h1>Delivery Drivers</h1>
         </div>
     </div>
+    <div class="row mt-3">
+        <div class="col">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Staff Number</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                {% for driver in drivers %}
+                    <tr>
+                        <td>{{ staff.staff_number }}</td>
+                        <td>{{ staff.first_name }}</td>
+                        <td>{{ staff.last_name }}</td>
+                        <td>Edit driver</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
 </div>
 {% endblock %}
