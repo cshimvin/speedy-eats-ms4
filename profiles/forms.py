@@ -27,7 +27,7 @@ class UserProfileForm(forms.ModelForm):
             'default_postcode': 'Postal Code',
         }
 
-        # Set autofocus to Full Name field
+        # Set autofocus to Default Phone Number field
         self.fields['default_phone_number'].widget.attrs['autofocus'] = True
 
         # Add placeholders with set above together with an asterisk

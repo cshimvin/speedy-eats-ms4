@@ -1,12 +1,13 @@
 from django import forms
-from .models import Review
+from .models import Driver
 
 
-class ReviewForm(forms.ModelForm):
-    """ Review form model """
+class DriverForm(forms.ModelForm):
+    """ Delivery driver form model """
     class Meta:
-        model = Review
-        fields = ("review_title", "review_body", "rating", "reviewer_name")
+        model = Driver
+        fields = ('staff_number', 'first_name', 'last_name',
+                  'vehicle_type', 'vehicle_reg_number')
 
     def __init__(self, *args, **kwargs):
         """
@@ -17,13 +18,13 @@ class ReviewForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         # Create dictionary of placeholders
         placeholders = {
-            'review_title': 'Title of your review',
-            'review_body': 'Your review',
-            'rating': 'Rating (0-5)',
-            'reviewer_name': "Your name",
+            'staff_number': 'Staff number',
+            'first_name': 'First name',
+            'last_name': 'Last name',
+            'vehicle_type': 'Vehicle type',
         }
-        # Set autofocus to Review title field
-        self.fields['review_title'].widget.attrs['autofocus'] = True
+        # Set autofocus to Full Name field
+        self.fields['staff_number'].widget.attrs['autofocus'] = True
         for field in self.fields:
             if self.fields[field].required:
                 placeholder = f'{placeholders[field]} *'
@@ -31,6 +32,6 @@ class ReviewForm(forms.ModelForm):
                 placeholder = placeholders[field]
             self.fields[field].widget.attrs['placeholder'] = placeholder
             # Style form
-            self.fields[field].widget.attrs['class'] = 'review-form-input'
+            self.fields[field].widget.attrs['class'] = 'driver-form-input'
             # Remove form labels
             self.fields[field].label = False
