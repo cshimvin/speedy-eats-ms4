@@ -93,3 +93,19 @@ def driver_detail(request, driver_id):
     }
 
     return render(request, 'staff/driver_detail.html', context)
+
+
+def delete_driver(request, driver_id):
+    """
+    Delete a driver from the website
+    """
+    # Check user has permission to access the function
+    if not request.user.is_superuser:
+        messages.error(request, 'You do not have permission \
+            to access this function.')
+        return redirect(reverse('home'))
+
+    driver = get_object_or_404(Driver, pk=driver_id)
+    driver.delete()
+    messages.success(request, 'Driver has been deleted.')
+    return redirect(reverse('all_drivers'))

@@ -28,10 +28,13 @@
                         <td>{{ member.staff_number }}</td>
                         <td>{{ member.first_name }}</td>
                         <td>{{ member.last_name }}</td>
-                        <td><a href="{% url 'driver_detail' member.id %}">View</a> | <a href="{% url 'edit_driver' member.id %}">Edit</a> | Delete</td>
+                        <td><a href="{% url 'driver_detail' member.id %}">View</a>
+                             | <a href="{% url 'edit_driver' member.id %}">Edit</a>
+                              | <a href="{% url 'delete_driver' member.id %}">Delete</a></td>
                     </tr>
                 {% endfor %}
             </table>
+            <a href="{% url 'add_driver' %}" class="btn brand-color">Add a delivery driver&nbsp;&nbsp;<i class="fa fa-square-plus"></i></a>
         </div>
     </div>
 </div>

@@ -20,7 +20,7 @@
             <p><strong>Vehicle Type:</strong> {{ staff.vehicle_type }}</p>
             <a class="btn brand-color" href="{% url 'all_drivers' %}"><i
                     class="fa-solid fa-angles-left"></i>&nbsp;&nbsp;Go Back</a>
-            <a class="btn btn-danger" href="">Delete Driver&nbsp;&nbsp;<i class="fa-regular fa-trash-can"></i></a>
+            <a class="btn btn-danger" href="{% url 'delete_driver' staff.id %}">Delete Driver&nbsp;&nbsp;<i class="fa-regular fa-trash-can"></i></a>
             <a class="btn brand-color" href="{% url 'edit_driver' staff.id %}">Update Driver&nbsp;&nbsp;<i
                     class="fa-regular fa-pen-to-square"></i></a>
         </div>
