@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Add a Delivery Driver</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <form class="mt-3" action="{% url 'add_driver' %}" method="POST" id="driver-form">
+                {% csrf_token %}
+                {{ form.staff_number | as_crispy_field }}
+                {{ form.first_name | as_crispy_field }}
+                {{ form.last_name | as_crispy_field }}
+                {{ form.vehicle_reg_number | as_crispy_field }}
+                <div class="mb-3">
+                    <label for="vehicle_type">Vehicle type:</label>
+                    <select class="form-select form-select-lg" name="vehicle_type" id="vehicle_type" aria-label="Vehicle type">
+                        <option value="Car" selected>Car</option>
+                        <option value="Van">Van</option>
+                        <option value="Motorbike">Motorbike</option>
+                        <option value="Bicycle">Bicycle</option>
+                    </select>
+                </div>
+                <button class="btn brand-color">Add delivery driver <i class="fa-regular fa-square-plus"></i></button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

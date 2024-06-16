@@ -18,7 +18,7 @@
                     {{ form.review_title | as_crispy_field }}
                     {{ form.review_body | as_crispy_field }}
                     {{ form.reviewer_name | as_crispy_field }}
-                    <p>Your rating: (0-Terrible to 5-Great)</p>
+                    <p><label for="rating">Your rating: (0-Terrible to 5-Great)</label></p>
                         <input name="rating" id="rating" type="range" min="0" max="5" value="5" oninput="rangeValue.innerText = this.value">
                         &nbsp;<span id="rangeValue">5</span>
                     </p>

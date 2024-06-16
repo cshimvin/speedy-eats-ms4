@@ -22,6 +22,7 @@ class DriverForm(forms.ModelForm):
             'first_name': 'First name',
             'last_name': 'Last name',
             'vehicle_type': 'Vehicle type',
+            'vehicle_reg_number': 'Vehicle registration number',
         }
         # Set autofocus to Staff number field
         self.fields['staff_number'].widget.attrs['autofocus'] = True
