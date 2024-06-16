@@ -20,7 +20,14 @@
                 <p>Reviewed on {{ review.review_date }} by {{ review.reviewer_name }}</p>
             </div>
         </div>
-        <hr />
+        <hr>
         {% endfor %}
+        {% if request.user.is_authenticated %}
+            <div class="row">
+                <div class="col">
+                   <a href="{% url 'add_review' %}" class="btn brand-color">Add a review&nbsp;&nbsp;<i class="fa fa-square-plus"></i></a> 
+                </div>
+            </div>
+        {% endif %}
 </div>
 {% endblock %}
