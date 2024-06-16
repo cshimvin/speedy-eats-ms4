@@ -5,4 +5,5 @@ urlpatterns = [
     path('', views.all_drivers, name='all_drivers'),
     path('add/', views.add_driver, name='add_driver'),
     path('edit/<int:driver_id>/', views.edit_driver, name='edit_driver'),
+    path('details/<int:driver_id>', views.driver_detail, name='driver_detail'),
     ]

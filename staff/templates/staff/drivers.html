@@ -28,7 +28,7 @@
                         <td>{{ member.staff_number }}</td>
                         <td>{{ member.first_name }}</td>
                         <td>{{ member.last_name }}</td>
-                        <td><a href="{% url 'edit_driver' member.id %}">Edit</a> | Delete</td>
+                        <td><a href="{% url 'driver_detail' member.id %}">View</a> | <a href="{% url 'edit_driver' member.id %}">Edit</a> | Delete</td>
                     </tr>
                 {% endfor %}
             </table>

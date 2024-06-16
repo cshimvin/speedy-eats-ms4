@@ -6,7 +6,7 @@ class DriverForm(forms.ModelForm):
     """ Delivery driver form model """
     class Meta:
         model = Driver
-        fields = ('staff_number', 'first_name', 'last_name',
+        fields = ('staff_number', 'first_name', 'last_name', 'phone_number',
                   'vehicle_type', 'vehicle_reg_number')
 
     def __init__(self, *args, **kwargs):
@@ -21,6 +21,7 @@ class DriverForm(forms.ModelForm):
             'staff_number': 'Staff number',
             'first_name': 'First name',
             'last_name': 'Last name',
+            'phone_number': 'Telephone number',
             'vehicle_type': 'Vehicle type',
             'vehicle_reg_number': 'Vehicle registration number',
         }

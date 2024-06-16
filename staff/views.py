@@ -70,7 +70,8 @@ def edit_driver(request, driver_id):
                 Check your form input and try again.')
     else:
         form = DriverForm(instance=driver)
-        messages.info(request, f'You are currently editing {driver.first_name} {driver.last_name}')
+        messages.info(request, f'You are currently editing \
+            {driver.first_name} {driver.last_name}')
 
     template = 'staff/edit_driver.html'
     context = {

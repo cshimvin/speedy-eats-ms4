@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1 class="logo-font">Driver Details for {{ staff.first_name }} {{staff.last_name }}</h1>
+            <hr>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col">
+            <p><strong>Staff number:</strong> {{ staff.staff_number }}</p>
+            <p><strong>Telephone number:</strong> {{ staff.phone_number }}</p>
+            <p><strong>Vehicle Registration Number:</strong> {{ staff.vehicle_reg_number }}</p>
+            <p><strong>Vehicle Type:</strong> {{ staff.vehicle_type }}</p>
+            <a class="btn brand-color" href="{% url 'all_drivers' %}"><i
+                    class="fa-solid fa-angles-left"></i>&nbsp;&nbsp;Go Back</a>
+            <a class="btn btn-danger" href="">Delete Driver&nbsp;&nbsp;<i class="fa-regular fa-trash-can"></i></a>
+            <a class="btn brand-color" href="{% url 'edit_driver' staff.id %}">Update Driver&nbsp;&nbsp;<i
+                    class="fa-regular fa-pen-to-square"></i></a>
+        </div>
+    </div>
+</div>
+{% endblock %}
