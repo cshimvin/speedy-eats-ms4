@@ -1,11 +1,11 @@
 from django.shortcuts import render, reverse, redirect, get_object_or_404
 from django.contrib import messages
-from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from .models import Driver
 from .forms import DriverForm
 
 
+@login_required
 def all_drivers(request):
     """
     A view to show all delivery drivers
@@ -17,6 +17,7 @@ def all_drivers(request):
     return render(request, 'staff/drivers.html', context)
 
 
+@login_required
 def add_driver(request):
     """
     A view to add a delivery driver to the site
@@ -48,6 +49,7 @@ def add_driver(request):
     return render(request, template, context)
 
 
+@login_required
 def edit_driver(request, driver_id):
     """
     A view to edit a driver's details
@@ -83,6 +85,7 @@ def edit_driver(request, driver_id):
     return render(request, template, context)
 
 
+@login_required
 def driver_detail(request, driver_id):
     """
     A view to show details of a specific food item
@@ -95,6 +98,7 @@ def driver_detail(request, driver_id):
     return render(request, 'staff/driver_detail.html', context)
 
 
+@login_required
 def delete_driver(request, driver_id):
     """
     Delete a driver from the website

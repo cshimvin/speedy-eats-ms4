@@ -30,14 +30,12 @@
                         <option value="Bicycle" {% if driver.vehicle_type == 'Bicycle' %}selected{% endif %}>Bicycle</option>
                     </select>
                 </div>
-                <div class="text-right">
                     <a class="btn brand-color" href="{% url 'all_drivers' %}"><i
                             class="fa-solid fa-angles-left"></i>&nbsp;&nbsp;Cancel</a>
                     <a class="btn btn-danger" href="">Delete Driver&nbsp;&nbsp;<i
                             class="fa-regular fa-trash-can"></i></a>
                     <button class="btn brand-color" type="submit">Update Driver&nbsp;&nbsp;<i
                             class="fa-regular fa-pen-to-square"></i></button>
-                </div>
             </form>
         </div>
     </div>

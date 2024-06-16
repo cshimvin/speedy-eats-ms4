@@ -79,6 +79,7 @@
                 <a href="{% url 'add_review' %}" class="dropdown-item">Add a review</a>
                 {% if request.user.is_superuser %}
                   <a href="{% url 'add_product' %}" class="dropdown-item">Add a product</a>
+                  <a href="{% url 'all_drivers' %}" class="dropdown-item">Driver management</a>
                 {% endif %}
               {% else %}
                 <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
