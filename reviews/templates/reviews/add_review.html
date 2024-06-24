@@ -7,12 +7,13 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        <div class="col">
-            <h1>Add Review</h1>
+        <div class="col col mt-3 offset-1">
+            <h2 class="logo-font">Add Review</h2>
+            <hr>
         </div>
     </div>
         <div class="row">
-            <div class="col">
+            <div class="col mt-3 offset-1">
                 <form class="mt-3" action="{% url 'add_review' %}" method="POST" id="review-form">
                     {% csrf_token %}
                     {{ form.review_title | as_crispy_field }}

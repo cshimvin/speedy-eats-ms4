@@ -33,7 +33,8 @@ DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = ['localhost',
                  'cshimvin-speedy-eats-9486f6bced13.herokuapp.com',
-                 '8000-cshimvin-speedyeatsms4-led6v65y8is.ws-eu114.gitpod.io']
+                 '8000-cshimvin-speedyeatsms4-led6v65y8is.ws-eu114.gitpod.io',
+                 '8000-cshimvin-speedyeatsms4-roxxi7ril1r.ws.codeinstitute-ide.net']
 
 
 # Application definition
