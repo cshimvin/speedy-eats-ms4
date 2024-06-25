@@ -45,6 +45,7 @@ As a business, I would like the website to:
 - offer delivery of food to customers
 - allow customers to buy food for delivery
 - accept card payments online
+- administer delivery drivers
 
 ### User Goals
 
@@ -55,6 +56,7 @@ As a user, I would like the website to
 - offer payment online
 - offer delivery of food to my home
 - provide decent descriptions of food items so I know what I'm ordering
+- allow me to write reviews on my experience
 
 ### Administrator Goals
 
@@ -65,6 +67,7 @@ As a website administrator I would like the website to:
 - let me check customer's orders
 - create superusers in order for them to add and update food items
 - view and update the minimum order value and current delivery time
+- create, update and remove delivery drivers
 
 ## User Experience
 
@@ -80,6 +83,7 @@ First time visitor goals:
 - As a first time visitor, I would like to see how much I have spent so far and if I have met the minimum order requirements.
 - As a first time visitor, I would like a smooth ordering and checkout process.
 - As a first time visitor, I would like to receive confirmation of my order to ensure it has been processed correctly.
+- As a first time visitor, I would like to view reviews so I know what to expect.
 
 Returning visitor goals
 
@@ -88,6 +92,7 @@ Returning visitor goals
 - As a returning visitor, I would like to be able to save my details for further orders so I don't have to complete it every time.
 - As a returning visitor, I would like a smooth ordering and checkout process.
 - As a returning visitor, I would like to receive confirmation of my order to ensure it has been processed correctly.
+- As a returning visitor, I would like to write a review on my previous experience.
 
 Frequent visitor goals:
 
@@ -102,7 +107,7 @@ As a website administrator:
 - As a website administrator, I would like the website to let me check customer's orders.
 - As a website administrator, I would like the website to create superusers in order for them to add and update food items.
 - As a website administrator, I would like the website to view and update the minimum order value and current delivery time.
-
+- As a website administrator, I would like to create, update and remove delivery drivers.
 
 ### Design and Structure
 
@@ -122,7 +127,7 @@ I used brown for the main brand colour as this conveys earthiness which relates 
 
 I chose the following typography:
 
-- Roboto for the amin body text font
+- Roboto for the main body text font
 - Reddit Mono for the page titles font
 
 ### Wireframes
@@ -192,7 +197,7 @@ his allows a user to log in so that they can see their past orders or carry out 
 
 ![Log in page](/documentation/images/log-in.png)
 
-### Product details page
+#### Product details page
 
 This shows the details of the food item including it's price and the option to add a quantity of the item to their bag. If the user is logged in as a superuser then buttons are displayed to allow the food item listing to be edited or deleted.
 
@@ -201,6 +206,8 @@ This shows the details of the food item including it's price and the option to a
 #### Add a product page
 
 This is available to logged in superusers only. It allows a product to be added to the database with details including the name, description, price, image and type of dish.
+
+It contains validation so a negative price cannot be entered.
 
 ![Add product form](/documentation/images/add-product.png)
 
@@ -232,14 +239,52 @@ This allows a logged in user to amend their personal details to ensure future pu
 
 ![Profile page](/documentation/images/profile.png)
 
+#### Add a Review Page
+
+This allows a logged in user to write a review on their previous experience of the website and food.
+
+This includes: Review Title, Review Body, Rating and Name
+
+![Add a review page](/documentation/images/add-a-review.png)
+
+#### Reviews page
+
+This shows all users reviews left by other users of the site including a rating and date the review was left.
+
+![Reviews page](/documentation/images/reviews.png)
+
+#### Delivery Drivers Management page
+
+This allows logged in administrators to view a list of delivery drivers and enables them to view the driver and edit driver details and remove drivers from the database. It also allows new drivers to be added.
+
+![Delivery Drivers page](/documentation/images/delivery-drivers.png)
+
+#### Add a Driver page
+
+This allows logged in administrators to add a delivery driver to the database.
+
+![Add a Driver page](/documentation/images/add-driver.png)
+
+#### View a Driver page
+
+This allows logged in administrators to view details of a specific delivery driver including staff number, name, phone number, vehicle type and registration.
+
+![View a Driver page](/documentation/images/driver-details.png)
+
+#### Edit a Driver page
+
+This allows logged in administrators to edit details of a specific delivery driver including staff number, name, phone number, vehicle type and registration.
+
+![Edit a Driver page](/documentation/images/edit-driver.png)
+
 ### Could Have
 
 If there was more time available in this phase, the following features could be implemented:
 
 - __More user friendly order numbers:__ At present the order numbers are quite complex. Displaying a more user friendly number means if a customer has to contact the retailer by phone, it is easier to give them the order number.
-- A postcode check to ensure the customer is in the delivery area.
-- Customised 404 and 500 error pages to keep the website on brand.
-- A contact page for users to contact the retailer in case of any issues.
+- __A postcode check__ to ensure the customer is in the delivery area.
+- __Customised 404 and 500 error pages__ to keep the website on brand.
+- __A contact page__ for users to contact the retailer in case of any issues.
 - When looking at the complete menu, the items could be divided into categories.
 
 ### Won't Have (for now)
@@ -327,7 +372,12 @@ The functionality for various aspects of the site was tested and the results are
 |Profile                 |When a registered user goes to the profile page, they are presented with a form to amend their details and information about their recent orders. If they are not logged in they are redirected to a log in page.                                                              |Went to the profile page as a logged in user and saw the form and order history. Went to the profile when not logged in and was presented with a log in page.                                                                                                                                                                                                                    |PASS  |
 |Register                |When a new user goes to the register page, they are presented with a form to complete their details including a username and password to user in future.                                                                                                                       |Went to the registration page and was able to register successfully.                                                                                                                                                                                                                                                                                                             |PASS  |
 |Home Page               |when a customer clicks on the food menu button, they are presented with a list of food items they can buy.                                                                                                                                                                     |Clicked on the "Browse our menu" button on the home page and was presented with the menu items available.                                                                                                                                                                                                                                                                        |PASS  |
-
+| Write a Review page | When a logged in user visits the page, a form is presented where a user can write a review of their experience | Went to Add Review page and submitted a review successfully | PASS |
+| View Reviews page | When a user visits the page, the reviews submitted are displayed on the page | Went to the Reviews page and saw a list of reviews | PASS |
+| Delivery Driver Management | When a superuser visits the page, they see a list of delivery drivers with options to edit, delete, view and add drivers | Visited the Drivers page and was able to see a list of drivers and was able to click on the various links which took me to the correct locations | PASS |
+| Add a delivery driver | When a superuser clicks on the add driver link on the driver list page, they are presented with a form to complete the various delivery driver details | Submitted the form on the page and form submitted correctly | PASS |
+| Edit a delivery driver | When a superuser clicks on the edit driver link on the driver list page, they are presented with a form with existing information and can edit the various delivery driver details | Changed information on the form on the page and submitted it and form submitted correctly | PASS |
+| When an administrator clicks on the delete link on a driver in the driver details page or driver list page, the driver is deleted. | Clicked on a delete link on a driver details page and on the driver list page. I received a success message and I checked the database and the details had been updated. | PASS |
 
 When in development, each app was tested after creation by creating a basic view showing the text "It works".
 
