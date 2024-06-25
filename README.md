@@ -333,19 +333,23 @@ The user stories have been tested and the results are:
 |                          |I would like to see how much I have spent so far and if I have met the minimum order requirements.                     |PASS  |
 |                          |I would like a smooth ordering and checkout process.                                                                    |PASS  |
 |                          |I would like to receive confirmation of my order to ensure it has been processed correctly.                             |PASS  |
+| | I would like to read reviews on the website | PASS |
 |Returning customer        |I would like to navigate the site and find other food to order.                                                         |PASS  |
 |                          |I would like to check on my previous orders.                                                                            |PASS  |
 |                          |I would like to be able to save my details for further orders so I don't have to complete it every time.                |PASS  |
 |                          |I would like a smooth ordering and checkout process.                                                                    |PASS  |
 |                          |I would like to receive confirmation of my order to ensure it has been processed correctly.                             |PASS  |
+| | I would like to leave and read reviews on the website | PASS |
 |Frequent visitor          |I would like to keep up to date with any new food items or special offers.                                              |PASS  |
 |                          |I would like to create a profile so I can save my delivery information for the future and to see all my previous orders.|PASS  |
 |                          |I would like a consistent a familiar view of the site so I know what I need to do to order items.                       |PASS  |
+| | I would like to leave and read reviews on the website | PASS | 
 |As a website administrator|I would like the website to be easy to understand and navigate.                                                         |PASS  |
 |                          |I would like the website to let me administer food items on the site.                                                   |PASS  |
 |                          |I would like the website to let me check customer's orders.                                                             |PASS  |
 |                          |I would like the website to create superusers in order for them to add and update food items.                           |PASS  |
 |                          |I would like the website to view and update the minimum order value and current delivery time.                          |PASS  |
+| | I would like to view, update, delete and create delivery driver staff members | PASS |
 
 
 ### Functionality
@@ -377,7 +381,7 @@ The functionality for various aspects of the site was tested and the results are
 | Delivery Driver Management | When a superuser visits the page, they see a list of delivery drivers with options to edit, delete, view and add drivers | Visited the Drivers page and was able to see a list of drivers and was able to click on the various links which took me to the correct locations | PASS |
 | Add a delivery driver | When a superuser clicks on the add driver link on the driver list page, they are presented with a form to complete the various delivery driver details | Submitted the form on the page and form submitted correctly | PASS |
 | Edit a delivery driver | When a superuser clicks on the edit driver link on the driver list page, they are presented with a form with existing information and can edit the various delivery driver details | Changed information on the form on the page and submitted it and form submitted correctly | PASS |
-| When an administrator clicks on the delete link on a driver in the driver details page or driver list page, the driver is deleted. | Clicked on a delete link on a driver details page and on the driver list page. I received a success message and I checked the database and the details had been updated. | PASS |
+| Delete a delivery driver | When an administrator clicks on the delete link on a driver in the driver details page or driver list page, the driver is deleted. | Clicked on a delete link on a driver details page and on the driver list page. I received a success message and I checked the database and the details had been updated. | PASS |
 
 When in development, each app was tested after creation by creating a basic view showing the text "It works".
 
