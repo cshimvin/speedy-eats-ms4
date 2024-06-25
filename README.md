@@ -283,7 +283,7 @@ If there was more time available in this phase, the following features could be 
 
 - __More user friendly order numbers:__ At present the order numbers are quite complex. Displaying a more user friendly number means if a customer has to contact the retailer by phone, it is easier to give them the order number.
 - __A postcode check__ to ensure the customer is in the delivery area.
-- __Customised 404 and 500 error pages__ to keep the website on brand.
+- __Customised 500 error page__ to keep the website on brand.
 - __A contact page__ for users to contact the retailer in case of any issues.
 - When looking at the complete menu, the items could be divided into categories.
 
